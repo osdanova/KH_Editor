@@ -1,0 +1,43 @@
+﻿<Window x:Class="KH_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="KH Editor" Height="450" Width="800">
+    
+    <DockPanel>
+        
+        <!-- TOPNAV MENU -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Tools" Visibility="Visible">
+                <MenuItem Header="KH 1 [X]" />
+                <MenuItem Header="KH 2 [X]" />
+                <MenuItem Header="KH 3 [X]" />
+                <MenuItem Header="KH DDD" />
+            </MenuItem>
+            <MenuItem Header="DEBUG" Visibility="Visible">
+                <MenuItem Header="Execute code" Click="executeCode" />
+            </MenuItem>
+        </Menu>
+        
+        <!-- MESSAGE BOX -->
+        <Label Name="MessageLabel"
+               DockPanel.Dock="Bottom" Height="20"
+               Background="DarkGray"
+               BorderThickness="2">
+        </Label>
+
+        <Grid DockPanel.Dock="Left" Style="{StaticResource KH_Grid}">
+            
+            <!-- APP -->
+            <Frame Name="FrameToLoad"
+                   Grid.Column="0">
+            </Frame>
+
+        </Grid>
+        
+
+        
+    </DockPanel>
+</Window>

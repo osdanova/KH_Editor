@@ -6,4 +6,29 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\Main\BackgroundTile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Images\" />
+    <Folder Include="Assets\Icons\" />
+    <Folder Include="Assets\Fonts\" />
+    <Folder Include="Model\Structures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xe.BinaryMapper" Version="1.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Backgrounds\BackgroundTile.png" />
+  </ItemGroup>
+
 </Project>
