@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using KH_Editor.View.Main;
 
 namespace KH_Editor.View.KH_DDD.DDD_Status
 {
@@ -9,9 +10,9 @@ namespace KH_Editor.View.KH_DDD.DDD_Status
     {
         DDD_StatusComponentHandler handler;
 
-        public DDD_StatusComponent()
+        public DDD_StatusComponent(MainSocket mainSocketIn)
         {
-            handler = new DDD_StatusComponentHandler();
+            handler = new DDD_StatusComponentHandler(mainSocketIn);
             DataContext = handler.status;
             InitializeComponent();
 

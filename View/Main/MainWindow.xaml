@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mainData="clr-namespace:KH_Editor.View.Main"
         mc:Ignorable="d"
         Title="KH Editor" Height="450" Width="800">
     
@@ -11,27 +12,28 @@
         <!-- TOPNAV MENU -->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Tools" Visibility="Visible">
-                <MenuItem Header="KH 1 [X]" />
-                <MenuItem Header="KH 2 [X]" />
-                <MenuItem Header="KH 3 [X]" />
-                <MenuItem Header="KH DDD" />
+                <MenuItem Header="KH DDD">
+                    <MenuItem Header="Status" Click="loadPage_DDDStatus"/>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="DEBUG" Visibility="Visible">
+                <MenuItem Header="Menu" Click="loadPage_Debug"/>
                 <MenuItem Header="Execute code" Click="executeCode" />
             </MenuItem>
         </Menu>
-        
+
         <!-- MESSAGE BOX -->
-        <Label Name="MessageLabel"
-               DockPanel.Dock="Bottom" Height="20"
+        <Label Name="InfoLabel"
+               Content="{Binding infoLabel_VM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               DockPanel.Dock="Bottom" Height="30"
                Background="DarkGray"
-               BorderThickness="2">
+               BorderThickness="1">
         </Label>
 
         <Grid DockPanel.Dock="Left" Style="{StaticResource KH_Grid}">
             
             <!-- APP -->
-            <Frame Name="FrameToLoad"
+            <Frame Name="FrameToLoad" NavigationUIVisibility="Hidden"
                    Grid.Column="0">
             </Frame>
 
