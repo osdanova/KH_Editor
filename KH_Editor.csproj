@@ -13,12 +13,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\Icon_Attack.png" />
+    <None Remove="Assets\Icons\Icon_Blizzard.png" />
+    <None Remove="Assets\Icons\Icon_Dark.png" />
+    <None Remove="Assets\Icons\Icon_Defense.png" />
+    <None Remove="Assets\Icons\Icon_Exp.png" />
+    <None Remove="Assets\Icons\Icon_Fire.png" />
+    <None Remove="Assets\Icons\Icon_HP.png" />
+    <None Remove="Assets\Icons\Icon_Light.png" />
+    <None Remove="Assets\Icons\Icon_LP.png" />
+    <None Remove="Assets\Icons\Icon_Magic.png" />
+    <None Remove="Assets\Icons\Icon_Thunder.png" />
+    <None Remove="Assets\Icons\Icon_Water.png" />
     <None Remove="View\Main\BackgroundTile.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Assets\Images\" />
-    <Folder Include="Assets\Icons\" />
     <Folder Include="Assets\Fonts\" />
   </ItemGroup>
 
@@ -28,6 +39,42 @@
 
   <ItemGroup>
     <Resource Include="Assets\Backgrounds\BackgroundTile.png" />
+    <Resource Include="Assets\Icons\Icon_Attack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Defense.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Exp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Fire.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Blizzard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_HP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_LP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Magic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Thunder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Water.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

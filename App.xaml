@@ -5,6 +5,14 @@
              StartupUri="View/Main/MainWindow.xaml">
     <Application.Resources>
 
+        <!-- TABLES -->
+        <Style x:Key="KH_Table" TargetType="DataGrid">
+            <Setter Property="AlternatingRowBackground" Value="LightGray"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling"/>
+            <Setter Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="True"/>
+        </Style>
+        
         <!-- BACKGROUNDS -->
         <Style x:Key="KH_Grid" TargetType="Grid">
             <Setter Property="Background">

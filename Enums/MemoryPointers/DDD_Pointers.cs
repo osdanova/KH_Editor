@@ -9,5 +9,7 @@
         DROP_MOD_EGS_POINTER_OFFSET = 434,
         DROP_MOD_EGS_SIZE = 1,
 
+        BTLPARAM_MOD_EGS = 0x1098DDE0,
+
     }
 }

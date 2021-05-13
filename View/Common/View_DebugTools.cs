@@ -6,6 +6,9 @@ using KH_Editor.Libs.Memory;
 using System.Linq;
 using KH_Editor.Libs.Utils;
 using KH_Editor.View.Main;
+using KH_Editor.Model.KH_DDD.btlparam;
+using Xe.BinaryMapper;
+using System.IO;
 
 namespace KH_Editor.View.Common
 {
@@ -26,6 +29,12 @@ namespace KH_Editor.View.Common
             //procHandler.writeBytesToProcessModule(0xA4A05C, BinaryHelper.intAsBytes(munny));
 
             //Debug.WriteLine("Size of btlparam: " + procHandler.readBytesFromProcessModuleUntilHexString(0x1098DDE0, "CDCDCDCDCDCDCDCD").Count);
+
+            //DDD_btlparam_Entry myEntry = BinaryMapping.ReadObject<DDD_btlparam_Entry>(new MemoryStream(procHandler.readBytesFromProcessModule(0x1098DDE0, 72).ToArray()));
+            //DDD_btlparam_Entry myEntry = BinaryMapper.toObject<DDD_btlparam_Entry>(procHandler.readBytesFromProcessModule(0x1098DDE0, 72));
+            //Debug.WriteLine("DEBUG > entity: " + myEntry.entity);
+            DDD_btlparam_File file = new DDD_btlparam_File(procHandler.readBytesFromProcessModuleUntilHexString(0x1098DDE0, "CDCDCDCDCDCDCDCD"));
+            Debug.WriteLine("DDD_btlparam_File size: " + file.toBytes().Count);
 
             //Debug.WriteLine("btlparam EOF: " + readBytesInAddress(procHandler, 0x7FF6DECC1E48, 8));
 

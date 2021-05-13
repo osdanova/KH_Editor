@@ -2,6 +2,7 @@
 using System.Windows;
 using KH_Editor.View.Common;
 using KH_Editor.View.KH_DDD.DDD_Status;
+using KH_Editor.View.KH_DDD.DDD_btlparam;
 using KH_Editor.View.Main;
 
 namespace KH_Editor
@@ -26,7 +27,8 @@ namespace KH_Editor
         private void executeCode(object sender, EventArgs e) { View_DebugTools.executeCode(); }
 
         private void loadPage_Debug(object sender, EventArgs e) { FrameToLoad.Content = new DebugView(); }
-        private void loadPage_DDDStatus(object sender, EventArgs e) { FrameToLoad.Content = new DDD_StatusComponent(this); }
+        private void loadPage_DDD_status(object sender, EventArgs e) { FrameToLoad.Content = new DDD_StatusComponent(this); }
+        private void loadPage_DDD_btlparam(object sender, EventArgs e) { FrameToLoad.Content = new DDD_btlparamComponent(this); }
 
         // INFO LABEL
 
