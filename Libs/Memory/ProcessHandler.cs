@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using KH_Editor.Enums;
+using KH_Editor.Libs.Utils;
 using KH_Editor.Model.Structures;
 
 namespace KH_Editor.Libs.Memory
@@ -43,6 +45,15 @@ namespace KH_Editor.Libs.Memory
             if (hookedProcess == null) { Debug.WriteLine("ProcessHandler > readBytesFromProcess > No process is hooked"); return new List<byte>(); }
             return MemoryAccess.readMemory(hookedProcess, address, size);
         }
+        public List<byte> readBytesFromProcessModuleUntilHexString(long address, string text) { return readBytesFromProcessUntilHexString(mainModuleAddress + address, text); }
+        public List<byte> readBytesFromProcessUntilHexString(long address, string hexString)
+        {
+            long stringAddress = findAddressOf(hexString, address, 100000);
+            long lengthToRead = stringAddress - address;
+            if (lengthToRead <= 0) return new List<byte>();
+
+            return readBytesFromProcess(address, lengthToRead);
+        }
 
         // WRITE
 
@@ -52,6 +63,18 @@ namespace KH_Editor.Libs.Memory
             //Debug.WriteLine("Writing to: " + address + ", size: " + input.Count);
             if (hookedProcess == null) { Debug.WriteLine("ProcessHandler > readBytesFromProcess > No process is hooked"); return; }
             MemoryAccess.writeMemory(hookedProcess, address, input);
+        }
+
+        // OTHER UTILS
+        public long findAddressOf(String hexString, long address, int findRange)
+        {
+            if (hookedProcess == null) { Debug.WriteLine("ProcessHandler > readBytesFromProcess > No process is hooked"); return -1; }
+
+            List<byte> memoryDump = MemoryAccess.readMemory(hookedProcess, address, findRange);
+            String memoryDumpString = BinaryHelper.bytesAsHexString(memoryDump);
+            long foundIndex = memoryDumpString.IndexOf(hexString);
+
+            return address + (foundIndex / 2);
         }
     }
 }

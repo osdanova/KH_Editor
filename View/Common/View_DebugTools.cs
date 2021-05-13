@@ -18,12 +18,16 @@ namespace KH_Editor.View.Common
             //Byte[] myByteArray = { 1,1,1,1,1,1,1,1 };
             //DDD_btlparam_Entry myEntry = BinaryMapping.ReadObject<DDD_btlparam_Entry>(new MemoryStream(myByteArray));
 
-            //ProcessHandler procHandler = new ProcessHandler(ProcessType.DDD_EGS);
-            //procHandler.hookProcessByType();
+            ProcessHandler procHandler = new ProcessHandler(ProcessType.DDD_EGS);
+            procHandler.hookProcessByType();
             //int munny = BinaryHelper.bytesAsInt(procHandler.readBytesFromProcessModule(0xA4A05C, 4));
             //Debug.WriteLine("DEBUG > munny: " + munny);
             //munny = 9876;
             //procHandler.writeBytesToProcessModule(0xA4A05C, BinaryHelper.intAsBytes(munny));
+
+            //Debug.WriteLine("Size of btlparam: " + procHandler.readBytesFromProcessModuleUntilHexString(0x1098DDE0, "CDCDCDCDCDCDCDCD").Count);
+
+            //Debug.WriteLine("btlparam EOF: " + readBytesInAddress(procHandler, 0x7FF6DECC1E48, 8));
 
             Debug.WriteLine("DEBUG > executeCode > OUT");
         }
@@ -35,6 +39,11 @@ namespace KH_Editor.View.Common
         public static void printRunningProcesses()
         {
             foreach (Process process in Process.GetProcesses()) Debug.WriteLine("Process: " + process.ProcessName);
+        }
+        public static string readBytesInAddress(ProcessHandler procHandler, long address, long size)
+        {
+            List<byte> memoryDump = MemoryAccess.readMemory(procHandler.hookedProcess, address, size);
+            return BinaryHelper.bytesAsHexString(memoryDump);
         }
     }
 }
