@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <None Remove="Assets\Icons\Icon_Attack.png" />
+    <None Remove="Assets\Icons\Icon_AttackRes.png" />
     <None Remove="Assets\Icons\Icon_Blizzard.png" />
     <None Remove="Assets\Icons\Icon_Dark.png" />
     <None Remove="Assets\Icons\Icon_Defense.png" />
@@ -25,6 +26,7 @@
     <None Remove="Assets\Icons\Icon_Magic.png" />
     <None Remove="Assets\Icons\Icon_Thunder.png" />
     <None Remove="Assets\Icons\Icon_Water.png" />
+    <None Remove="Assets\Logos\Logo_DDD.png" />
     <None Remove="View\Main\BackgroundTile.png" />
   </ItemGroup>
 
@@ -40,6 +42,9 @@
   <ItemGroup>
     <Resource Include="Assets\Backgrounds\BackgroundTile.png" />
     <Resource Include="Assets\Icons\Icon_Attack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_AttackRes.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\Icon_Dark.png">
@@ -73,6 +78,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\Icon_Water.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Logos\Logo_DDD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

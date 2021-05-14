@@ -58,5 +58,18 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
+        <!-- BUTTONS -->
+        <Style x:Key="KH_Button" TargetType="Button">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+        </Style>
+
+        <!-- SPLITTER -->
+
+        <Style x:Key="VerticalSplitter" TargetType="GridSplitter">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
     </Application.Resources>
 </Application>

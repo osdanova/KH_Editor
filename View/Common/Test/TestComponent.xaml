@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="KH_Editor.View.Common.TestComponent.TestComponent"
+﻿<UserControl x:Class="KH_Editor.View.Common.Test.TestComponent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -15,16 +15,23 @@
             </Style>
         </DockPanel.Resources>
 
-        <Label DockPanel.Dock="Top" Height="30">GAME:</Label>
-        <Label DockPanel.Dock="Top" Height="30">Connected</Label>
+        <!-- GAME LOGO -->
+        <Image DockPanel.Dock="Top" Name="logoImage" />
+
+
+        <!-- Middle panel required for bottom -->
         <Frame DockPanel.Dock="Left"/>
-        <Grid DockPanel.Dock="Bottom" Height="100">
+
+        <!-- ACTIONS -->
+        <Grid DockPanel.Dock="Bottom" Height="150">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Click="readAction">Read</Button>
-            <Button Grid.Row="1" Click="writeAction">Write</Button>
+            <Button Grid.Row="0" Name="readButton" Style="{StaticResource KH_Button}" Click="readAction">Read</Button>
+            <Button Grid.Row="1" Name="writeButton" Style="{StaticResource KH_Button}" Click="writeAction">Write</Button>
+            <Button Grid.Row="2" Name="exportButton" Style="{StaticResource KH_Button}" Click="exportAction">Export</Button>
         </Grid>
     </DockPanel>
     
