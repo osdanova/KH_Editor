@@ -50,6 +50,22 @@
                 <DataGridTextColumn Binding="{Binding Path=unk41}" Header="unk41"  />
                 <DataGridTextColumn Binding="{Binding Path=unk42}" Header="unk42"  />
                 <DataGridTextColumn Binding="{Binding Path=unk43}" Header="unk43"  />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusFreeze}" Header="Freeze" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusStop}" Header="Stop" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusGravity}" Header="Gravity" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusMagnet}" Header="Magnet" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusStun}" Header="Stun" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusSleep}" Header="Sleep" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusBind}" Header="Bind" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusSlow}" Header="Slow" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusPoison}" Header="Poison" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusIgnite}" Header="Ignite" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusConfusion}" Header="Confusion" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusBlind}" Header="Blind" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusMini}" Header="Mini" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusTimeBomb}" Header="Time Bomb" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusFlag15}" Header="status15" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=statusZantetsuken}" Header="Zantetsuken" />
             </DataGrid.Columns>
         </DataGrid>
 

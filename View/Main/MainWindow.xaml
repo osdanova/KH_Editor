@@ -14,6 +14,7 @@
             <MenuItem Header="Tools" Visibility="Visible">
                 <MenuItem Header="KH DDD">
                     <MenuItem Header="Status" Click="loadPage_DDD_status"/>
+                    <MenuItem Header="Inventory" Click="loadPage_DDD_inventory"/>
                     <MenuItem Header="btlparam" Click="loadPage_DDD_btlparam"/>
                 </MenuItem>
             </MenuItem>

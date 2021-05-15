@@ -72,12 +72,17 @@ namespace KH_Editor.Libs.Utils
             }
         }
 
-        public static byte setBitFromFlagTo(Byte flag, int pos, bool one)
+        public static bool getBitFromFlag(Byte flag, int pos)
+        {
+            return new BitArray(new int[1] { flag }).Get(pos);
+        }
+
+        public static byte setBitFromFlagTo(Byte flag, int pos, bool bit)
         {
             byte[] bytes = new byte[1];
             bytes[0] = flag;
             BitArray ba = new BitArray(bytes);
-            ba.Set(pos, one);
+            ba.Set(pos, bit);
             //Convert back to byte.
             ba.CopyTo(bytes, 0);
             return bytes[0];

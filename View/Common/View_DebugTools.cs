@@ -21,8 +21,8 @@ namespace KH_Editor.View.Common
             //Byte[] myByteArray = { 1,1,1,1,1,1,1,1 };
             //DDD_btlparam_Entry myEntry = BinaryMapping.ReadObject<DDD_btlparam_Entry>(new MemoryStream(myByteArray));
 
-            ProcessHandler procHandler = new ProcessHandler(ProcessType.DDD_EGS);
-            procHandler.hookProcessByType();
+            //ProcessHandler procHandler = new ProcessHandler(ProcessType.DDD_EGS);
+            //procHandler.hookProcessByType();
             //int munny = BinaryHelper.bytesAsInt(procHandler.readBytesFromProcessModule(0xA4A05C, 4));
             //Debug.WriteLine("DEBUG > munny: " + munny);
             //munny = 9876;
@@ -33,8 +33,8 @@ namespace KH_Editor.View.Common
             //DDD_btlparam_Entry myEntry = BinaryMapping.ReadObject<DDD_btlparam_Entry>(new MemoryStream(procHandler.readBytesFromProcessModule(0x1098DDE0, 72).ToArray()));
             //DDD_btlparam_Entry myEntry = BinaryMapper.toObject<DDD_btlparam_Entry>(procHandler.readBytesFromProcessModule(0x1098DDE0, 72));
             //Debug.WriteLine("DEBUG > entity: " + myEntry.entity);
-            DDD_btlparam_File file = new DDD_btlparam_File(procHandler.readBytesFromProcessModuleUntilHexString(0x1098DDE0, "CDCDCDCDCDCDCDCD"));
-            Debug.WriteLine("DDD_btlparam_File size: " + file.toBytes().Count);
+            //DDD_btlparam_File file = new DDD_btlparam_File(procHandler.readBytesFromProcessModuleUntilHexString(0x1098DDE0, "CDCDCDCDCDCDCDCD"));
+            //Debug.WriteLine("DDD_btlparam_File size: " + file.toBytes().Count);
 
             //Debug.WriteLine("btlparam EOF: " + readBytesInAddress(procHandler, 0x7FF6DECC1E48, 8));
 
