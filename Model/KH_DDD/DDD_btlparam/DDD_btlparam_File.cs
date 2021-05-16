@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using KH_Editor.Libs.Utils;
 
-namespace KH_Editor.Model.KH_DDD.btlparam
+namespace KH_Editor.Model.KH_DDD.DDD_btlparam
 {
     class DDD_btlparam_File
     {

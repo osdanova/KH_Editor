@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using KH_Editor.Dictionaries.KH_DDD;
 using KH_Editor.Libs.Utils;
 using Xe.BinaryMapper;
 
-namespace KH_Editor.Model.KH_DDD.btlparam
+namespace KH_Editor.Model.KH_DDD.DDD_btlparam
 {
     [Serializable]
     class DDD_btlparam_Entry

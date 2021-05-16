@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using KH_Editor.Enums.DDD;
-using KH_Editor.View.Common;
+using KH_Editor.View.DebugComponent;
 using KH_Editor.View.Main;
 
 namespace KH_Editor

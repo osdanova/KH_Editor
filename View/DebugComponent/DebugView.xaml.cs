@@ -1,13 +1,13 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using KH_Editor.Model.KH_DDD.btlparam;
+using KH_Editor.Model.KH_DDD.DDD_btlparam;
 using Xe.BinaryMapper;
 using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace KH_Editor.View.Common
+namespace KH_Editor.View.DebugComponent
 {
     /// <summary>
     /// Interaction logic for DebugView.xaml

@@ -4,7 +4,7 @@ using System.Linq;
 using KH_Editor.Enums.DDD;
 using KH_Editor.Libs.Memory;
 using KH_Editor.Libs.Utils;
-using KH_Editor.Model.KH_DDD.btlparam;
+using KH_Editor.Model.KH_DDD.DDD_btlparam;
 using KH_Editor.View.Common.Base;
 using KH_Editor.View.Main;
 

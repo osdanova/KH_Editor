@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 using KH_Editor.Enums.DDD;
-using KH_Editor.View.Common;
+using KH_Editor.View.DebugComponent;
 using KH_Editor.View.KH_DDD.DDD_btlparam;
 using KH_Editor.View.KH_DDD.DDD_inventory;
 using KH_Editor.View.KH_DDD.DDD_itemdata;
