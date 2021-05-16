@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using KH_Editor.Enums.MemoryPointers;
+using KH_Editor.Enums.DDD;
 using KH_Editor.Libs.Memory;
 using KH_Editor.Libs.Utils;
 using KH_Editor.Model.Structures;

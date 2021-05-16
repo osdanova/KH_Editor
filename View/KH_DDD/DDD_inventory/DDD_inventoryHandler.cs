@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using KH_Editor.Enums.MemoryPointers;
+using KH_Editor.Enums.DDD;
 using KH_Editor.Libs.Memory;
 using KH_Editor.Model.KH_DDD.DDD_inventory;
 using KH_Editor.View.Common.Base;

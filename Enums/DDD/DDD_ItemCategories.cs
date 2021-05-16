@@ -1,4 +1,4 @@
-﻿namespace KH_Editor.Enums.MemoryPointers
+﻿namespace KH_Editor.Enums.DDD
 {
     enum DDD_ItemCategories : int
     {

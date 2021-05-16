@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using KH_Editor.Enums.MemoryPointers;
+using KH_Editor.Enums.DDD;
 
 namespace KH_Editor.Dictionaries.KH_DDD
 {

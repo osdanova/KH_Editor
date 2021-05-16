@@ -1,4 +1,4 @@
-﻿namespace KH_Editor.Enums.MemoryPointers
+﻿namespace KH_Editor.Enums.DDD
 {
     enum DDD_Pointers : long
     {
@@ -13,6 +13,7 @@
         INVENTORY_COMMANDS_MOD_EGS = 0xA48D74,
 
         BTLPARAM_MOD_EGS = 0x1098DDE0,
+        ITEMDATA_MOD_EGS = 0x10982D30,
 
     }
 }

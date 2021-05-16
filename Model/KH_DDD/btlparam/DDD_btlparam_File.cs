@@ -9,7 +9,7 @@ namespace KH_Editor.Model.KH_DDD.btlparam
         // DATA
 
         public static readonly int ENTRY_SIZE = 72;
-        public static readonly string HEX_EOF = "CDCDCDCDCDCDCDCD";
+        public static readonly string HEX_EOF = FormatHelper.cdEof(8);
 
         public ObservableCollection<DDD_btlparam_Entry> entries { get; set; }
 

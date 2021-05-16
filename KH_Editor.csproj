@@ -33,6 +33,7 @@
   <ItemGroup>
     <Folder Include="Assets\Images\" />
     <Folder Include="Assets\Fonts\" />
+    <Folder Include="Enums\MemoryPointers\" />
   </ItemGroup>
 
   <ItemGroup>
