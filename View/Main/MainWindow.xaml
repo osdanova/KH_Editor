@@ -17,6 +17,8 @@
                     <MenuItem Header="Inventory" Click="loadPage_DDD_inventory"/>
                     <MenuItem Header="btlparam" Click="loadPage_DDD_btlparam"/>
                     <MenuItem Header="itemdata" Click="loadPage_DDD_itemdata"/>
+                    <MenuItem Header="tboxdtso" Click="loadPage_DDD_tboxdtso"/>
+                    <MenuItem Header="tboxdtri" Click="loadPage_DDD_tboxdtri"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="DEBUG" Visibility="Visible">

@@ -7,5 +7,7 @@
         INVENTORY,
         BTLPARAM,
         ITEMDATA,
+        TBOXDTSO,
+        TBOXDTRI,
     }
 }

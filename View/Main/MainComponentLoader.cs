@@ -5,6 +5,7 @@ using KH_Editor.View.KH_DDD.DDD_btlparam;
 using KH_Editor.View.KH_DDD.DDD_inventory;
 using KH_Editor.View.KH_DDD.DDD_itemdata;
 using KH_Editor.View.KH_DDD.DDD_Status;
+using KH_Editor.View.KH_DDD.DDD_tboxdt;
 
 namespace KH_Editor.View.Main
 {
@@ -19,6 +20,8 @@ namespace KH_Editor.View.Main
                 case DDD_Components.INVENTORY: frame.Content = new DDD_inventoryComponent(main); break;
                 case DDD_Components.BTLPARAM: frame.Content = new DDD_btlparamComponent(main); break;
                 case DDD_Components.ITEMDATA: frame.Content = new DDD_itemdataComponent(main); break;
+                case DDD_Components.TBOXDTSO: frame.Content = new DDD_tboxdtComponent(main, true); break;
+                case DDD_Components.TBOXDTRI: frame.Content = new DDD_tboxdtComponent(main, false); break;
                 default: break;
             }
             
