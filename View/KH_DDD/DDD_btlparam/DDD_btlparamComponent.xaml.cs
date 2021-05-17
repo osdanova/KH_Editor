@@ -14,7 +14,7 @@ namespace KH_Editor.View.KH_DDD.DDD_btlparam
         public DDD_btlparamComponent(MainSocket mainSocketIn)
         {
             handler = new DDD_btlparamHandler(mainSocketIn);
-            DataContext = handler.file;
+            DataContext = handler;
             InitializeComponent();
 
             TestComponent.Content = handler.testComponent;
@@ -27,6 +27,14 @@ namespace KH_Editor.View.KH_DDD.DDD_btlparam
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 handler.dropFile(files[0]);
             }
+        }
+
+        private void actionFilter(object sender, TextChangedEventArgs e)
+        {
+            handler.filterEntriesByName(NameFilter.Text);
+
+            if(NameFilter.Text != "") DataTable.CanUserAddRows = false;
+            else DataTable.CanUserAddRows = true;
         }
     }
 }

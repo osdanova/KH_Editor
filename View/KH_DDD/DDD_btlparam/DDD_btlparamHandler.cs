@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using KH_Editor.Enums.DDD;
@@ -14,11 +15,14 @@ namespace KH_Editor.View.KH_DDD.DDD_btlparam
     {
         public DDD_btlparam_File file { get; set; }
 
+        public ObservableCollection<DDD_btlparam_Entry> displayEntries { get; set; }
+
         // CONSTRUCTORS
 
         public DDD_btlparamHandler(MainSocket mainSocketIn) : base(mainSocketIn, Enums.ProcessType.DDD_EGS)
         {
             file = new DDD_btlparam_File();
+            displayEntries = new ObservableCollection<DDD_btlparam_Entry>();
         }
 
         // ACTIONS
@@ -66,7 +70,33 @@ namespace KH_Editor.View.KH_DDD.DDD_btlparam
         {
             DDD_btlparam_File readFile = new DDD_btlparam_File(byteFile);
             file.entries.Clear();
-            foreach (DDD_btlparam_Entry entry in readFile.entries) file.entries.Add(entry);
+            displayEntries.Clear();
+            foreach (DDD_btlparam_Entry entry in readFile.entries)
+            {
+                file.entries.Add(entry);
+                displayEntries.Add(entry);
+            }
+        }
+
+        public void filterEntriesByName(string filter)
+        {
+            if (displayEntries.Count == 0) return;
+
+            displayEntries.Clear();
+            if(filter != "")
+            {
+                foreach (DDD_btlparam_Entry entry in file.entries)
+                {
+                    if (entry.name.ToLower().Contains(filter.ToLower())) displayEntries.Add(entry);
+                }
+            }
+            else
+            {
+                foreach (DDD_btlparam_Entry entry in file.entries)
+                {
+                    displayEntries.Add(entry);
+                }
+            }
         }
     }
 }
