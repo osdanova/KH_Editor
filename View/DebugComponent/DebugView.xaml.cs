@@ -6,6 +6,7 @@ using Xe.BinaryMapper;
 using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
+using KH_Editor.Model.KH_DDD.DDD_lboard;
 
 namespace KH_Editor.View.DebugComponent
 {
@@ -29,7 +30,10 @@ namespace KH_Editor.View.DebugComponent
 
                 // Assuming you have one file that you care about, pass it off to whatever
                 // handling code you have defined.
-                checkBtlparam(files[0]);
+                //checkBtlparam(files[0]);
+
+                List<byte> byteFile = File.ReadAllBytes(files[0]).ToList();
+                DDD_lboard_File lboardFile = new DDD_lboard_File(byteFile);
             }
         }
 

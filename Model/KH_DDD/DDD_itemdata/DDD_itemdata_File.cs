@@ -11,7 +11,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_itemdata
 
         public static readonly int HEADER_SIZE = 28;
         public static readonly int ENTRY_SIZE = 4;
-        public static readonly string HEX_EOF = FormatHelper.cdEof(8);
+        public static readonly string HEX_EOF = FormatHelper.repeatString("CD",8);
 
         public DDD_itemdata_FileHeader header { get; set; }
         public ObservableCollection<DDD_itemdata_Entry> entries { get; set; }

@@ -38,13 +38,13 @@ namespace KH_Editor.Libs.Utils
             return Regex.Replace(text, "(.{" + lineLength + "})", "$1" + Environment.NewLine);
         }
 
-        // Returns a string containing legnth amount of CD.
-        // Eg: 4: CDCDCDCD
-        public static string cdEof(int length)
+        // Returns a string containing N times the given string.
+        // Eg: "CD", 4: CDCDCDCD
+        public static string repeatString(String str, int times)
         {
-            string eofString = "";
-            for (int i = 0; i < length; i++) eofString += "CD";
-            return eofString;
+            string repeatStr = "";
+            for (int i = 0; i < times; i++) repeatStr += str;
+            return repeatStr;
         }
     }
 }

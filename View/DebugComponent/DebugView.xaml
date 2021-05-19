@@ -10,6 +10,6 @@
 
     <Grid Background="AliceBlue"
           Drop="actionFileDrop" AllowDrop="True">
-        <Label>DEBUG</Label>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">DEBUG</Label>
     </Grid>
 </Page>
