@@ -34,6 +34,7 @@ namespace KH_Editor
         private void loadPage_DDD_tboxdtso(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.TBOXDTSO); }
         private void loadPage_DDD_tboxdtri(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.TBOXDTRI); }
         private void loadPage_DDD_lboard(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.LBOARD); }
+        private void loadPage_DDD_lbtList(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.LBT_LIST); }
 
         // INFO LABEL
 

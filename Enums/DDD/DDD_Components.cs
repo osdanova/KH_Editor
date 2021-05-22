@@ -11,5 +11,6 @@
         TBOXDTSO,
         TBOXDTRI,
         LBOARD,
+        LBT_LIST,
     }
 }

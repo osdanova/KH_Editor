@@ -1,29 +1,28 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using KH_Editor.Enums.DDD;
 using KH_Editor.Libs.Memory;
 using KH_Editor.Libs.Utils;
-using KH_Editor.Model.KH_DDD.DDD_lboard;
+using KH_Editor.Model.KH_DDD.DDD_lbtList;
 using KH_Editor.View.Common.Base;
 using KH_Editor.View.Main;
 
-namespace KH_Editor.View.KH_DDD.DDD_lboard
+namespace KH_Editor.View.KH_DDD.DDD_lbtList
 {
-    class DDD_lboardHandler : MainTestSocketed
+    class DDD_lbtListHandler : MainTestSocketed
     {
-        public DDD_lboard_File file { get; set; }
+        public DDD_lbtList_File file { get; set; }
 
-        public DDD_lboard_Board loadedBoard { get; set; }
-        public DDD_lboard_Board loadedBoard_VM { get => loadedBoard; set { loadedBoard = value; NotifyPropertyChanged("loadedBoard_VM"); } }
+        public DDD_lbtList_Board loadedBoard { get; set; }
+        public DDD_lbtList_Board loadedBoard_VM { get => loadedBoard; set { loadedBoard = value; NotifyPropertyChanged("loadedBoard_VM"); } }
 
         // CONSTRUCTORS
 
-        public DDD_lboardHandler(MainSocket mainSocketIn) : base(mainSocketIn, Enums.ProcessType.DDD_EGS)
+        public DDD_lbtListHandler(MainSocket mainSocketIn) : base(mainSocketIn, Enums.ProcessType.DDD_EGS)
         {
-            file = new DDD_lboard_File();
-            loadedBoard_VM = new DDD_lboard_Board();
+            file = new DDD_lbtList_File();
+            loadedBoard_VM = new DDD_lbtList_Board();
         }
 
         // ACTIONS
@@ -33,8 +32,9 @@ namespace KH_Editor.View.KH_DDD.DDD_lboard
         {
             try
             {
-                // NOTE: The file is loaded when the DE menu is loaded
-                loadFile(processHandler.readBytesFromProcessModuleUntilHexString((long)DDD_Pointers.LBOARD_MOD_EGS_B, DDD_lboard_File.HEX_EOF));
+                int entryCount = BinaryHelper.bytesAsInt(processHandler.readBytesFromProcessModule((long)DDD_Pointers.LBT_LIST_MOD_EGS + 8, 4));
+                int fileSize = DDD_lbtList_File.calcFileSizeByBoardCount(entryCount);
+                loadFile(processHandler.readBytesFromProcessModule((long)DDD_Pointers.LBT_LIST_MOD_EGS, fileSize));
             }
             catch { writeInfoLabel("Error reading"); }
         }
@@ -44,7 +44,7 @@ namespace KH_Editor.View.KH_DDD.DDD_lboard
         {
             try
             {
-                processHandler.writeBytesToProcessModule((long)DDD_Pointers.LBOARD_MOD_EGS_B, file.toBytes());
+                processHandler.writeBytesToProcessModule((long)DDD_Pointers.LBT_LIST_MOD_EGS, file.toBytes());
             }
             catch { writeInfoLabel("Error writing"); }
         }
@@ -70,13 +70,14 @@ namespace KH_Editor.View.KH_DDD.DDD_lboard
 
         public void loadFile(List<byte> byteFile)
         {
-            DDD_lboard_File readFile = new DDD_lboard_File(byteFile);
+            DDD_lbtList_File readFile = new DDD_lbtList_File(byteFile);
             file.header = readFile.header;
             file.boards.Clear();
-            foreach (DDD_lboard_Board board in readFile.boards) file.boards.Add(board);
+            file.filePadding = readFile.filePadding;
+            foreach (DDD_lbtList_Board board in readFile.boards) file.boards.Add(board);
         }
 
-        public void loadBoard(DDD_lboard_Board board)
+        public void loadBoard(DDD_lbtList_Board board)
         {
             loadedBoard_VM = board;
         }

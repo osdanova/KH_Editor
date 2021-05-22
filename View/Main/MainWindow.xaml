@@ -21,6 +21,7 @@
                     <MenuItem Header="tboxdtso" Click="loadPage_DDD_tboxdtso"/>
                     <MenuItem Header="tboxdtri" Click="loadPage_DDD_tboxdtri"/>
                     <MenuItem Header="lboard" Click="loadPage_DDD_lboard"/>
+                    <MenuItem Header="lbt_list" Click="loadPage_DDD_lbtList"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="DEBUG" Visibility="Visible">

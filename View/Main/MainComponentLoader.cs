@@ -5,6 +5,7 @@ using KH_Editor.View.KH_DDD.DDD_btlparam;
 using KH_Editor.View.KH_DDD.DDD_inventory;
 using KH_Editor.View.KH_DDD.DDD_itemdata;
 using KH_Editor.View.KH_DDD.DDD_lboard;
+using KH_Editor.View.KH_DDD.DDD_lbtList;
 using KH_Editor.View.KH_DDD.DDD_spirit;
 using KH_Editor.View.KH_DDD.DDD_Status;
 using KH_Editor.View.KH_DDD.DDD_tboxdt;
@@ -26,6 +27,7 @@ namespace KH_Editor.View.Main
                 case DDD_Components.TBOXDTSO: frame.Content = new DDD_tboxdtComponent(main, true); break;
                 case DDD_Components.TBOXDTRI: frame.Content = new DDD_tboxdtComponent(main, false); break;
                 case DDD_Components.LBOARD: frame.Content = new DDD_lboardComponent(main); break;
+                case DDD_Components.LBT_LIST: frame.Content = new DDD_lbtListComponent(main); break;
                 default: break;
             }
             

@@ -34,10 +34,12 @@ namespace KH_Editor.Dictionaries.KH_DDD
         {
             switch (category)
             {
-                case (int)DDD_ItemCategories.KEYBLADE:
-                    return getKeybladeById(id);
+                case (int)DDD_ItemCategories.COMMAND:
+                    return getCommandById(id);
                 case (int)DDD_ItemCategories.ABILITY:
                     return getAbilityById(id);
+                case (int)DDD_ItemCategories.KEYBLADE:
+                    return getKeybladeById(id);
                 case (int)DDD_ItemCategories.RECIPE:
                     return getRecipeById(id);
                 case (int)DDD_ItemCategories.KEY_ITEM:
@@ -301,11 +303,11 @@ namespace KH_Editor.Dictionaries.KH_DDD
             { 234 , "? ? ?" },
             { 235 , "? ? ?" },
             { 236 , "HP Boost" },
-            { 237 , "? ? ?" },
-            { 238 , "? ? ?" },
-            { 239 , "? ? ?" },
-            { 240 , "? ? ?" },
-            { 241 , "? ? ?" },
+            { 237 , "Fire Boost" },
+            { 238 , "Blizzard Boost" },
+            { 239 , "Thunder Boost" },
+            { 240 , "Water Boost" },
+            { 241 , "Cure Boost" },
             { 242 , "Item Boost" },
             { 243 , "Attack Haste" },
             { 244 , "Magic Haste" },
@@ -318,8 +320,8 @@ namespace KH_Editor.Dictionaries.KH_DDD
             { 251 , "Water Screen" },
             { 252 , "Dark Screen" },
             { 253 , "Light Screen" },
-            { 254 , "? ? ?" },
-            { 255 , "? ? ?" },
+            { 254 , "Mini Block" },
+            { 255 , "Blindness Block" },
         };
 
         // ABILITIES - Support & Spirit
@@ -332,38 +334,29 @@ namespace KH_Editor.Dictionaries.KH_DDD
         }
         public static Dictionary<byte, string> abilityById = new Dictionary<byte, string>()
         {
-            { 0 , "" },
-            { 1 , "" },
+            { 0 , "Confusion Block" },
+            { 1 , "Bind Block" },
             { 2 , "Poison Block" },
-            { 3 , "" },
-            { 4 , "" },
-            { 5 , "" },
-            { 6 , "" },
-            { 7 , "" },
-            { 8 , "" },
-            { 9 , "" },
-            { 10, "" },
-            { 11, "" },
-            { 12, "" },
-            { 13, "" },
-            { 14, "" },
-            { 15, "" },
-            { 16, "" },
-            { 17, "" },
+            { 3 , "Slow Block" },
+            { 4 , "Sleep Block" },
+            { 5 , "Stop Block" },
+            { 6 , "Reload Boost" },
+            { 7 , "Defender" },
+            { 8 , "Combo Plus" },
+            { 9 , "Air Combo Plus" },
+            { 10, "Combo Master" },
+            { 11, "EXP Boost" },
+            { 12, "EXP Walker" },
+            { 13, "EXP Zero" },
+            { 14, "Damage Syphon" },
+            { 15, "Second Chance" },
+            { 16, "Once More" },
+            { 17, "Scan" },
             { 18, "Leaf Bracer" },
-            { 19, "" },
+            { 19, "Treasure Magnet" },
             { 20, "Link Critical" },
-            { 21, "" },
-            { 22, "" },
-            { 23, "" },
-            { 24, "" },
-            { 25, "" },
-            { 26, "" },
-            { 27, "" },
-            { 28, "" },
-            { 29, "" },
-            { 30, "" },
-            { 31, "" },
+            { 21, "Support Boost" },
+            { 22, "Waking Dream" },
         };
 
         // KEYBLADES
