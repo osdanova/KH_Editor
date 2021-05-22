@@ -5,7 +5,7 @@ using KH_Editor.View.Main;
 
 namespace KH_Editor.View.Common.Base
 {
-    class MainTestSocketed : TestComponentSocket
+    class MainTestSocketed : PropertyNotify, TestComponentSocket
     {
         public TestComponent testComponent;
         public MainSocket mainSocket;

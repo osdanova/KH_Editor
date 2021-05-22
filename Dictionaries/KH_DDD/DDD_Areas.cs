@@ -32,7 +32,5 @@ namespace KH_Editor.Dictionaries.KH_DDD
             { (int)DDD_WorldAreas.TRAVERSE_TOWN_2 , "Traverse Town 2" },
             { (int)DDD_WorldAreas.ENDING , "Ending" },
         };
-
-        // AREAS
     }
 }

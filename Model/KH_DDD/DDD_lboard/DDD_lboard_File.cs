@@ -31,7 +31,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
                 int boardSize = nextOffset - boardOffset;
 
                 List<byte> byteEntry = byteFile.GetRange(boardOffset, boardSize);
-                DDD_lboard_Board entry = new DDD_lboard_Board(byteEntry);
+                DDD_lboard_Board entry = new DDD_lboard_Board(byteEntry, i);
                 boards.Add(entry);
             }
         }
@@ -48,7 +48,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
 
             foreach (DDD_lboard_Board board in boards)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(board));
+                byteFile.AddRange(board.toBytes());
             }
             byteFile.AddRange(BinaryHelper.hexStringAsBytes(HEX_EOF));
             return byteFile;
@@ -60,7 +60,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
 
             header.boardCount = boards.Count;
             int currentOffset = DDD_lboard_Header.SIZE;
-            for(int i = 0;  i > boards.Count; i++)
+            for(int i = 0;  i < boards.Count; i++)
             {
                 header.boardOffsets[i] = currentOffset;
                 currentOffset += (boards[i].entries.Count * DDD_lboard_Entry.SIZE);

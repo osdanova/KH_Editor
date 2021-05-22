@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="KH_Editor.View.KH_DDD.DDD_lboard.DDD_lboardComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KH_Editor.View.KH_DDD.DDD_lboard"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Drop="dropFile" AllowDrop="True">
+
+    <Grid Style="{StaticResource KH_Grid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- COMPONENT -->
+        <ListView Grid.Column="0" Name="boardList"
+                  ItemsSource="{Binding file.boards}"
+                  DisplayMemberPath="spiritTypeName">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <EventSetter Event="MouseDoubleClick" Handler="loadBoard"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <GridSplitter Grid.Column="1" Style="{StaticResource VerticalSplitter}"/>
+
+        <DataGrid Grid.Column="2" Style="{StaticResource KH_Table}"
+                  ItemsSource="{Binding loadedBoard_VM.entries}"
+                  CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=posX}" Header="Pos X" />
+                <DataGridTextColumn Binding="{Binding Path=posY}" Header="Pos Y" />
+                <DataGridTextColumn Binding="{Binding Path=nodeTypeName}" Header="Node Type" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=NodeType}" Header="Node Type Id" />
+                <DataGridTextColumn Binding="{Binding Path=secretRedUnlock}" Header="Secret Red Unlock" />
+                <DataGridTextColumn Binding="{Binding Path=linkRightName}" Header="Right" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=linkRight}" Header="Right Id" />
+                <DataGridTextColumn Binding="{Binding Path=linkDownName}" Header="Down" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=linkDown}" Header="Down Id" />
+                <DataGridTextColumn Binding="{Binding Path=disposition}" Header="Disposition" />
+                <DataGridTextColumn Binding="{Binding Path=unk5}" Header="unk5" />
+                <DataGridTextColumn Binding="{Binding Path=secretUnlock}" Header="Secret Unlock" />
+                <DataGridTextColumn Binding="{Binding Path=cost}" Header="Cost" />
+                <DataGridTextColumn Binding="{Binding Path=reward}" Header="Reward" />
+                <DataGridTextColumn Binding="{Binding Path=secretRedUnlock2}" Header="Secret Red Unlock 2" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Column="3" Style="{StaticResource VerticalSplitter}"/>
+
+        <!-- TEST -->
+        <Frame Grid.Column="4" Name ="TestComponent"/>
+    </Grid>
+</UserControl>

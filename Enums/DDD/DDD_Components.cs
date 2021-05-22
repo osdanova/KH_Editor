@@ -9,5 +9,6 @@
         ITEMDATA,
         TBOXDTSO,
         TBOXDTRI,
+        LBOARD,
     }
 }
