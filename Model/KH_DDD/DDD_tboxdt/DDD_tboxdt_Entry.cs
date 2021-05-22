@@ -20,7 +20,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_tboxdt
         {
             get
             {
-                if(itemCategory == (long)DDD_ItemCategories.COMMAND) return DDD_Commands.getCommandById(itemId);
+                if(itemCategory == (long)DDD_ItemCategories.COMMAND) return DDD_Items.getCommandById(itemId);
                 else return DDD_Items.getItemNameById(itemId, itemCategory);
             }
         }

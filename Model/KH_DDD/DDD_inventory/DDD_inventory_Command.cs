@@ -14,7 +14,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
         [Data] public byte Amount { get; set; }
         [Data] public short Pad3 { get; set; }
 
-        public string name { get { return DDD_Commands.getCommandById(Id); } }
+        public string name { get { return DDD_Items.getCommandById(Id); } }
 
         public bool soraDeck1 { get { return BinaryHelper.getBitFromFlag(DecksSora, 0); } set { DecksSora = BinaryHelper.setBitFromFlagTo(DecksSora, 0, value); } }
         public bool soraDeck2 { get { return BinaryHelper.getBitFromFlag(DecksSora, 1); } set { DecksSora = BinaryHelper.setBitFromFlagTo(DecksSora, 1, value); } }
