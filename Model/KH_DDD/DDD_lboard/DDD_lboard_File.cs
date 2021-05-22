@@ -19,7 +19,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
         public DDD_lboard_File() { header = new DDD_lboard_Header(); boards = new ObservableCollection<DDD_lboard_Board>(); }
         public DDD_lboard_File(List<byte> byteFile)
         {
-            header = BinaryMapper.toObject<DDD_lboard_Header>(byteFile.GetRange(0, DDD_lboard_Header.SIZE));
+            header = BinaryWrapper.toObject<DDD_lboard_Header>(byteFile.GetRange(0, DDD_lboard_Header.SIZE));
             boards = new ObservableCollection<DDD_lboard_Board>();
             for (int i = 0; i < header.boardCount; i++)
             {
@@ -44,7 +44,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
 
             List<byte> byteFile = new List<byte>();
 
-            byteFile.AddRange(BinaryMapper.toBytes(header));
+            byteFile.AddRange(BinaryWrapper.toBytes(header));
 
             foreach (DDD_lboard_Board board in boards)
             {

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using KH_Editor.Dictionaries.KH_DDD;
 using KH_Editor.Libs.Utils;
 
@@ -11,7 +10,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
         // DATA
 
         public int spiritType { get; set; }
-        public string spiritTypeName { get { return DDD_Lboard.getSpiritById(spiritType); } }
+        public string spiritTypeName { get { return DDD_Spirits.getSpiritById(spiritType); } }
         public static readonly string HEX_EOF = "0008" + FormatHelper.repeatString("00",14);
 
         public ObservableCollection<DDD_lboard_Entry> entries { get; set; }
@@ -29,7 +28,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
             for (int i = 0; i < entryCount; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(i * DDD_lboard_Entry.SIZE, DDD_lboard_Entry.SIZE);
-                DDD_lboard_Entry entry = BinaryMapper.toObject<DDD_lboard_Entry>(byteEntry);
+                DDD_lboard_Entry entry = BinaryWrapper.toObject<DDD_lboard_Entry>(byteEntry);
                 entries.Add(entry);
             }
         }
@@ -41,7 +40,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_lboard
             List<byte> byteFile = new List<byte>();
             foreach (DDD_lboard_Entry entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             //byteFile.AddRange(BinaryHelper.hexStringAsBytes(HEX_EOF));
             return byteFile;

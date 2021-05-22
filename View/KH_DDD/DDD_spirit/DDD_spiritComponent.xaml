@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="KH_Editor.View.KH_DDD.DDD_spirit.DDD_spiritComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KH_Editor.View.KH_DDD.DDD_spirit"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Drop="dropFile" AllowDrop="True">
+
+    <Grid Style="{StaticResource KH_Grid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Column="0" Style="{StaticResource KH_Table}"
+                      Name="DataTable"
+                      ItemsSource="{Binding file.entries}"
+                      CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=spiritTypeName}" Header="Spirit Type" IsReadOnly="True"  />
+                <DataGridTextColumn Binding="{Binding Path=spiritType}" Header="Spirit Type Id"  />
+                <DataGridTextColumn Binding="{Binding Path=disposition}" Header="Dispotition"  />
+                <DataGridTextColumn Binding="{Binding Path=rank}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Rank.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=level}" Header="Level"  />
+                <DataGridTextColumn Binding="{Binding Path=nameDefault}" Header="Name"  />
+                <DataGridTextColumn Binding="{Binding Path=affiLvl}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Affinity.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=colorR}" Header="R"  />
+                <DataGridTextColumn Binding="{Binding Path=colorG}" Header="G"  />
+                <DataGridTextColumn Binding="{Binding Path=colorB}" Header="B"  />
+                <DataGridTextColumn Binding="{Binding Path=exp}" Header="Exp"  />
+                <DataGridTextColumn Binding="{Binding Path=affinity}" Header="Affinity"  />
+                <DataGridTextColumn Binding="{Binding Path=maxHp}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_HP.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=attack}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Attack.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=magic}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Magic.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=defense}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Defense.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_physical}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_AttackRes.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_fire}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Fire.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_blizzard}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Blizzard.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_thunder}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Thunder.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_water}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Water.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_dark}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Dark.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_light}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Light.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=lp}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_LP.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=timesLinked}" Header="Times Linked"  />
+                <DataGridCheckBoxColumn Binding="{Binding Path=shiny}" Header="Shiny"  />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Column="1" Style="{StaticResource VerticalSplitter}"/>
+
+        <!-- TEST -->
+        <Frame Grid.Column="2" Name ="TestComponent"/>
+    </Grid>
+</UserControl>

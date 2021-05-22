@@ -7,7 +7,7 @@ using Xe.BinaryMapper;
 namespace KH_Editor.Libs.Utils
 {
     // Wrapper for Xeeynamo's BinaryMapping
-    class BinaryMapper
+    class BinaryWrapper
     {
         public static T toObject<T>(List<byte> byteList) where T : class
         {

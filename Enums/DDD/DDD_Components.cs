@@ -5,6 +5,7 @@
         DEBUG,
         STATUS,
         INVENTORY,
+        SPIRIT,
         BTLPARAM,
         ITEMDATA,
         TBOXDTSO,

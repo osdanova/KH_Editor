@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace KH_Editor.Libs.Utils
@@ -45,6 +46,20 @@ namespace KH_Editor.Libs.Utils
             string repeatStr = "";
             for (int i = 0; i < times; i++) repeatStr += str;
             return repeatStr;
+        }
+
+        // Returns the given string as a list of bytes with a "." after each letter. (As viewed in Cheat Engine/HxD)
+        // Eg: "Meow, 5": "M.e.o.w."
+        public static List<byte> textFormatDottedBytes(string text)
+        {
+            List<byte> byteText = Encoding.Default.GetBytes(text).ToList();
+            List<byte> byteResult = new List<byte>();
+            for(int i = 0; i < byteText.Count; i++)
+            {
+                byteResult.Add(byteText[i]);
+                byteResult.Add(0);
+            }
+            return byteResult;
         }
     }
 }

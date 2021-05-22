@@ -15,6 +15,7 @@
                 <MenuItem Header="KH DDD">
                     <MenuItem Header="Status" Click="loadPage_DDD_status"/>
                     <MenuItem Header="Inventory" Click="loadPage_DDD_inventory"/>
+                    <MenuItem Header="Spirits" Click="loadPage_DDD_spirit"/>
                     <MenuItem Header="btlparam" Click="loadPage_DDD_btlparam"/>
                     <MenuItem Header="itemdata" Click="loadPage_DDD_itemdata"/>
                     <MenuItem Header="tboxdtso" Click="loadPage_DDD_tboxdtso"/>

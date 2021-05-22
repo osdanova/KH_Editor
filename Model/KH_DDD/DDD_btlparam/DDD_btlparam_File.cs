@@ -23,7 +23,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_btlparam
             for (int i = 0; i < entryCount; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(i * ENTRY_SIZE, ENTRY_SIZE);
-                DDD_btlparam_Entry entry = BinaryMapper.toObject<DDD_btlparam_Entry>(byteEntry);
+                DDD_btlparam_Entry entry = BinaryWrapper.toObject<DDD_btlparam_Entry>(byteEntry);
                 entries.Add(entry);
             }
         }
@@ -35,7 +35,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_btlparam
             List<byte> byteFile = new List<byte>();
             foreach (DDD_btlparam_Entry entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             byteFile.AddRange(BinaryHelper.hexStringAsBytes(HEX_EOF));
             return byteFile;

@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\Icon_Affinity.png" />
     <None Remove="Assets\Icons\Icon_Attack.png" />
     <None Remove="Assets\Icons\Icon_AttackRes.png" />
     <None Remove="Assets\Icons\Icon_Blizzard.png" />
@@ -24,6 +25,7 @@
     <None Remove="Assets\Icons\Icon_Light.png" />
     <None Remove="Assets\Icons\Icon_LP.png" />
     <None Remove="Assets\Icons\Icon_Magic.png" />
+    <None Remove="Assets\Icons\Icon_Rank.png" />
     <None Remove="Assets\Icons\Icon_Thunder.png" />
     <None Remove="Assets\Icons\Icon_Water.png" />
     <None Remove="Assets\Logos\Logo_DDD.png" />
@@ -68,10 +70,16 @@
     <Resource Include="Assets\Icons\Icon_Light.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\Icon_Affinity.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\Icon_LP.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\Icon_Magic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\Icon_Rank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\Icon_Thunder.png">

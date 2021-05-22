@@ -84,7 +84,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
             for (int i = 0; i < count; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(currentOffset, ENTRY_SIZE);
-                DDD_inventory_Entry entry = BinaryMapper.toObject<DDD_inventory_Entry>(byteEntry);
+                DDD_inventory_Entry entry = BinaryWrapper.toObject<DDD_inventory_Entry>(byteEntry);
                 entry.categoryId = category;
                 entry.typeId = (byte)i;
                 entries.Add(entry);
@@ -113,7 +113,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
             for (int i = 0; i < count; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(currentOffset, ENTRY_SIZE_STACK);
-                DDD_inventory_EntryStack entry = BinaryMapper.toObject<DDD_inventory_EntryStack>(byteEntry);
+                DDD_inventory_EntryStack entry = BinaryWrapper.toObject<DDD_inventory_EntryStack>(byteEntry);
                 entry.categoryId = category;
                 entry.typeId = (byte)i;
                 entriesStack.Add(entry);
@@ -130,11 +130,11 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
             List<byte> byteFile = new List<byte>();
             foreach (DDD_inventory_Entry entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             foreach (DDD_inventory_EntryStack entry in entriesStack)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             return byteFile;
         }

@@ -22,14 +22,14 @@ namespace KH_Editor.Model.KH_DDD.DDD_itemdata
         public DDD_itemdata_File(List<byte> byteFile)
         {
             // Header
-            header = BinaryMapper.toObject<DDD_itemdata_FileHeader>(byteFile.GetRange(0,HEADER_SIZE));
+            header = BinaryWrapper.toObject<DDD_itemdata_FileHeader>(byteFile.GetRange(0,HEADER_SIZE));
 
             // Entries
             entries = new ObservableCollection<DDD_itemdata_Entry>();
             for (int i = 0; i < header.getEntryCount(); i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(HEADER_SIZE + (i * ENTRY_SIZE), ENTRY_SIZE);
-                DDD_itemdata_Entry entry = BinaryMapper.toObject<DDD_itemdata_Entry>(byteEntry);
+                DDD_itemdata_Entry entry = BinaryWrapper.toObject<DDD_itemdata_Entry>(byteEntry);
                 entries.Add(entry);
             }
         }
@@ -41,11 +41,11 @@ namespace KH_Editor.Model.KH_DDD.DDD_itemdata
             List<byte> byteFile = new List<byte>();
 
             recalcCounts();
-            byteFile.AddRange(BinaryMapper.toBytes(header));
+            byteFile.AddRange(BinaryWrapper.toBytes(header));
 
             foreach (DDD_itemdata_Entry entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             byteFile.AddRange(BinaryHelper.hexStringAsBytes(HEX_EOF));
             return byteFile;

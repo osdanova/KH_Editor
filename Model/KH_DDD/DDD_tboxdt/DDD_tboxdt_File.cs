@@ -23,14 +23,14 @@ namespace KH_Editor.Model.KH_DDD.DDD_tboxdt
         public DDD_tboxdt_File(List<byte> byteFile)
         {
             // Header
-            header = BinaryMapper.toObject<DDD_tboxdt_FileHeader>(byteFile.GetRange(0, HEADER_SIZE));
+            header = BinaryWrapper.toObject<DDD_tboxdt_FileHeader>(byteFile.GetRange(0, HEADER_SIZE));
 
             // Entries
             entries = new ObservableCollection<DDD_tboxdt_Entry>();
             for (int i = 0; i < header.totalCount; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(HEADER_SIZE + (i * ENTRY_SIZE), ENTRY_SIZE);
-                DDD_tboxdt_Entry entry = BinaryMapper.toObject<DDD_tboxdt_Entry>(byteEntry);
+                DDD_tboxdt_Entry entry = BinaryWrapper.toObject<DDD_tboxdt_Entry>(byteEntry);
                 entries.Add(entry);
             }
         }
@@ -42,11 +42,11 @@ namespace KH_Editor.Model.KH_DDD.DDD_tboxdt
             List<byte> byteFile = new List<byte>();
 
             recalcCounts();
-            byteFile.AddRange(BinaryMapper.toBytes(header));
+            byteFile.AddRange(BinaryWrapper.toBytes(header));
 
             foreach (DDD_tboxdt_Entry entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             return byteFile;
         }

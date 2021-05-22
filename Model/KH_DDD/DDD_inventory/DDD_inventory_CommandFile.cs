@@ -26,7 +26,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
             for (int i = 0; i < ENTRY_COUNT; i++)
             {
                 List<byte> byteEntry = byteFile.GetRange(i * ENTRY_SIZE, ENTRY_SIZE);
-                DDD_inventory_Command entry = BinaryMapper.toObject<DDD_inventory_Command>(byteEntry);
+                DDD_inventory_Command entry = BinaryWrapper.toObject<DDD_inventory_Command>(byteEntry);
                 entries.Add(entry);
             }
         }
@@ -38,7 +38,7 @@ namespace KH_Editor.Model.KH_DDD.DDD_inventory
             List<byte> byteFile = new List<byte>();
             foreach (DDD_inventory_Command entry in entries)
             {
-                byteFile.AddRange(BinaryMapper.toBytes(entry));
+                byteFile.AddRange(BinaryWrapper.toBytes(entry));
             }
             return byteFile;
         }
