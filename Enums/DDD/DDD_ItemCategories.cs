@@ -3,7 +3,7 @@
     enum DDD_ItemCategories : int
     {
         COMMAND = 0,
-        ABILITY = 1, // Abilities: Support & Spirits
+        MISC = 1, // Abilities: Support & Spirits; Drops: Dream Pieces & Orbs
         KEYBLADE = 2,
         RECIPE = 3,
         KEY_ITEM = 4,

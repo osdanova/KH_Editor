@@ -2,6 +2,7 @@
 using KH_Editor.Enums.DDD;
 using KH_Editor.View.DebugComponent;
 using KH_Editor.View.KH_DDD.DDD_btlparam;
+using KH_Editor.View.KH_DDD.DDD_dropprm;
 using KH_Editor.View.KH_DDD.DDD_inventory;
 using KH_Editor.View.KH_DDD.DDD_itemdata;
 using KH_Editor.View.KH_DDD.DDD_lboard;
@@ -31,6 +32,7 @@ namespace KH_Editor.View.Main
                 case DDD_Components.LBT_LIST: frame.Content = new DDD_lbtListComponent(main); break;
                 case DDD_Components.TECHPRM: frame.Content = new DDD_techprmComponent(main, false); break;
                 case DDD_Components.TECHPRMP: frame.Content = new DDD_techprmComponent(main, true); break;
+                case DDD_Components.DROPPRM: frame.Content = new DDD_dropprmComponent(main, true); break;
                 default: break;
             }
             

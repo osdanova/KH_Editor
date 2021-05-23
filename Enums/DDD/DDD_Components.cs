@@ -14,5 +14,6 @@
         LBT_LIST,
         TECHPRM,
         TECHPRMP,
+        DROPPRM,
     }
 }

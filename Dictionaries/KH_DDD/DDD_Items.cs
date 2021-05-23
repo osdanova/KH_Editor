@@ -16,7 +16,7 @@ namespace KH_Editor.Dictionaries.KH_DDD
         public static Dictionary<byte, string> categoryNameById = new Dictionary<byte, string>()
         {
             { (int)DDD_ItemCategories.COMMAND , "Command" },
-            { (int)DDD_ItemCategories.ABILITY , "Ability" },
+            { (int)DDD_ItemCategories.MISC , "Misc" },
             { (int)DDD_ItemCategories.KEYBLADE , "Keyblade" },
             { (int)DDD_ItemCategories.RECIPE , "Recipe" },
             { (int)DDD_ItemCategories.KEY_ITEM , "Key Item" },
@@ -36,8 +36,8 @@ namespace KH_Editor.Dictionaries.KH_DDD
             {
                 case (int)DDD_ItemCategories.COMMAND:
                     return getCommandById(id);
-                case (int)DDD_ItemCategories.ABILITY:
-                    return getAbilityById(id);
+                case (int)DDD_ItemCategories.MISC:
+                    return getMiscById(id);
                 case (int)DDD_ItemCategories.KEYBLADE:
                     return getKeybladeById(id);
                 case (int)DDD_ItemCategories.RECIPE:
@@ -327,12 +327,12 @@ namespace KH_Editor.Dictionaries.KH_DDD
         // ABILITIES - Support & Spirit
 
 
-        public static String getAbilityById(byte id)
+        public static String getMiscById(byte id)
         {
-            if (abilityById.ContainsKey(id)) return abilityById[id];
+            if (miscById.ContainsKey(id)) return miscById[id];
             return "";
         }
-        public static Dictionary<byte, string> abilityById = new Dictionary<byte, string>()
+        public static Dictionary<byte, string> miscById = new Dictionary<byte, string>()
         {
             { 0 , "Confusion Block" },
             { 1 , "Bind Block" },
@@ -357,6 +357,81 @@ namespace KH_Editor.Dictionaries.KH_DDD
             { 20, "Link Critical" },
             { 21, "Support Boost" },
             { 22, "Waking Dream" },
+            { 23, "" },
+            { 24, "" },
+            { 25, "" },
+            { 26, "" },
+            { 27, "" },
+            { 28, "" },
+            { 29, "" },
+            { 30, "" },
+            { 31, "" },
+            { 32, "" },
+            { 33, "" },
+            { 34, "" },
+            { 35, "" },
+            { 36, "" },
+            { 37, "" },
+            { 38, "" },
+            { 39, "" },
+            { 40, "" },
+            { 41, "" },
+            { 42, "" },
+            { 43, "" },
+            { 44, "" },
+            { 45, "" },
+            { 46, "" },
+            { 47, "" },
+            { 48, "" },
+            { 49, "" },
+            { 50, "Fleeting Figment" },
+            { 51, "Fleeting Fancy" },
+            { 52, "Fleeting Fantasy" },
+            { 53, "Lofty Figment" },
+            { 54, "Lofty Fancy" },
+            { 55, "Lofty Fantasy" },
+            { 56, "Rampant Figment" },
+            { 57, "Rampant Fancy" },
+            { 58, "Rampant Fantasy" },
+            { 59, "Dulcet Figment" },
+            { 60, "Dulcet Fancy" },
+            { 61, "Dulcet Fantasy" },
+            { 62, "Malleable Fantasy" },
+            { 63, "Prickly Fantasy" },
+            { 64, "Wild Fantasy" },
+            { 65, "Epic Fantasy" },
+            { 66, "Charming Fantasy" },
+            { 67, "Brilliant Fantasy" },
+            { 68, "Intrepid Figment" },
+            { 69, "Intrepid Fancy" },
+            { 70, "Intrepid Fantasy" },
+            { 71, "Savage Fantasy" },
+            { 72, "Noble Figment" },
+            { 73, "Noble Fancy" },
+            { 74, "Noble Fantasy" },
+            { 75, "Grim Figment" },
+            { 76, "Grim Fancy" },
+            { 77, "Grim Fantasy" },
+            { 78, "Vibrant Figment" },
+            { 79, "Vibrant Fancy" },
+            { 80, "Vibrant Fantasy" },
+            { 81, "Troubling Figment" },
+            { 82, "Troubling Fancy" },
+            { 83, "Troubling Fantasy" },
+            { 84, "Wondrous Figment" },
+            { 85, "Wondrous Fancy" },
+            { 86, "Wondrous Fantasy" },
+            { 87, "HP orb x1" },
+            { 88, "HP orb x2" },
+            { 89, "HP orb x3" },
+            { 90, "Munny orb x1" },
+            { 91, "Munny orb x2" },
+            { 92, "Munny orb x3" },
+            { 93, "Munny orb L x1" },
+            { 94, "Drop orb x1" },
+            { 95, "Drop orb x2" },
+            { 96, "Drop orb x3" },
+            { 97, "Drop obr L x1" },
         };
 
         // KEYBLADES

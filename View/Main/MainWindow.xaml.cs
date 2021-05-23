@@ -37,6 +37,7 @@ namespace KH_Editor
         private void loadPage_DDD_lbtList(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.LBT_LIST); }
         private void loadPage_DDD_techprm(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.TECHPRM); }
         private void loadPage_DDD_techprmp(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.TECHPRMP); }
+        private void loadPage_DDD_dropprm(object sender, EventArgs e) { MainComponentLoader.loadComponent(this, FrameToLoad, DDD_Components.DROPPRM); }
 
         // INFO LABEL
 

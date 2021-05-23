@@ -17,6 +17,7 @@
                     <MenuItem Header="Inventory" Click="loadPage_DDD_inventory"/>
                     <MenuItem Header="Spirits" Click="loadPage_DDD_spirit"/>
                     <MenuItem Header="btlparam" Click="loadPage_DDD_btlparam"/>
+                    <MenuItem Header="dropprm" Click="loadPage_DDD_dropprm"/>
                     <MenuItem Header="itemdata" Click="loadPage_DDD_itemdata"/>
                     <MenuItem Header="tboxdt">
                         <MenuItem Header="Sora" Click="loadPage_DDD_tboxdtso"/>
@@ -30,7 +31,7 @@
                     </MenuItem>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="DEBUG" Visibility="Visible">
+            <MenuItem Header="DEBUG" Visibility="Hidden">
                 <MenuItem Header="Menu" Click="loadPage_Debug"/>
                 <MenuItem Header="Execute code" Click="executeCode" />
             </MenuItem>
@@ -45,7 +46,26 @@
         </Label>
 
         <Grid DockPanel.Dock="Left" Style="{StaticResource KH_Grid}">
-            
+
+            <StackPanel>
+                <Label Style="{StaticResource WhiteFont}"
+                       Margin="0,100,0,0" HorizontalAlignment="Center" FontSize="20">
+                    Kingdom Hearts Editor (V.1.0)
+                </Label>
+                <Label Style="{StaticResource WhiteFont}"
+                       HorizontalAlignment="Center">
+                    Made by: osdanova
+                </Label>
+                <Label Style="{StaticResource WhiteFont}"
+                       HorizontalAlignment="Center">
+                    Github: /osdanova/KH_Editor
+                </Label>
+                <Label Style="{StaticResource WhiteFont}"
+                       HorizontalAlignment="Center">
+                    File documentation by the community at openkh.dev
+                </Label>
+            </StackPanel>
+
             <!-- APP -->
             <Frame Name="FrameToLoad" NavigationUIVisibility="Hidden"
                    Grid.Column="0">
