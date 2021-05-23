@@ -12,8 +12,8 @@ namespace KH_Editor.Dictionaries.KH_DDD
         }
 
         public static Dictionary<string, string> nameByEntity = new Dictionary<string, string>() {
-            { "p_ex010" , "Sora?" },
-            { "p_ex020" , "Riku?" },
+            { "p_ex010" , "Sora" },
+            { "p_ex020" , "Riku" },
             { "m_de010" , "Meow Wow" },
             { "m_de700" , "Meowjesty" },
             { "m_de011" , "Meow Wow (N)" },
