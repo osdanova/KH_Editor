@@ -2,6 +2,8 @@
 {
     enum DDD_Pointers : long
     {
+        // DATA
+
         MUNNY_MOD_EGS = 0xA4A05C,
         MUNNY_MOD_EGS_SIZE = 4,
         DROP_MOD_EGS_POINTER = 0xA94660,
@@ -14,6 +16,8 @@
 
         SPIRITS_MOD_EGS = 0xA42110,
 
+        // FILES
+
         BTLPARAM_MOD_EGS = 0x1098DDE0,
         ITEMDATA_MOD_EGS = 0x10982D30,
         TBOXDTSO_MOD_EGS = 0x10977400,
@@ -22,5 +26,7 @@
         LBOARD_MOD_EGS_B = 0x119C2670,
 
         LBT_LIST_MOD_EGS = 0x10983280,
+        TECHPRM_MOD_EGS = 0x10987170,
+        TECHPRMP_MOD_EGS = 0x110C2400,
     }
 }

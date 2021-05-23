@@ -12,5 +12,7 @@
         TBOXDTRI,
         LBOARD,
         LBT_LIST,
+        TECHPRM,
+        TECHPRMP,
     }
 }

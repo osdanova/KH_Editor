@@ -18,10 +18,16 @@
                     <MenuItem Header="Spirits" Click="loadPage_DDD_spirit"/>
                     <MenuItem Header="btlparam" Click="loadPage_DDD_btlparam"/>
                     <MenuItem Header="itemdata" Click="loadPage_DDD_itemdata"/>
-                    <MenuItem Header="tboxdtso" Click="loadPage_DDD_tboxdtso"/>
-                    <MenuItem Header="tboxdtri" Click="loadPage_DDD_tboxdtri"/>
+                    <MenuItem Header="tboxdt">
+                        <MenuItem Header="Sora" Click="loadPage_DDD_tboxdtso"/>
+                        <MenuItem Header="Riku" Click="loadPage_DDD_tboxdtri"/>
+                    </MenuItem>
                     <MenuItem Header="lboard" Click="loadPage_DDD_lboard"/>
                     <MenuItem Header="lbt_list" Click="loadPage_DDD_lbtList"/>
+                    <MenuItem Header="techprm">
+                        <MenuItem Header="Generic" Click="loadPage_DDD_techprm"/>
+                        <MenuItem Header="Player" Click="loadPage_DDD_techprmp"/>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="DEBUG" Visibility="Visible">

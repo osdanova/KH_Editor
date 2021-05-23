@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="KH_Editor.View.KH_DDD.DDD_techprm.DDD_techprmComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KH_Editor.View.KH_DDD.DDD_techprm"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Drop="dropFile" AllowDrop="True">
+
+    <Grid Style="{StaticResource KH_Grid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- COMPONENT -->
+        <DataGrid Grid.Row="0" Style="{StaticResource KH_Table}"
+                      Name="DataTable"
+                      ItemsSource="{Binding file.entries}"
+                      CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=unk0}" Header="unk0" />
+                <DataGridTextColumn Binding="{Binding Path=power}" Header="Power" />
+                <DataGridTextColumn Binding="{Binding Path=unk4}" Header="unk4" />
+                <DataGridTextColumn Binding="{Binding Path=unk5}" Header="unk5" />
+                <DataGridTextColumn Binding="{Binding Path=unk6}" Header="unk6" />
+                <DataGridTextColumn Binding="{Binding Path=bitfield7}" Header="bitfield 7" />
+                <DataGridTextColumn Binding="{Binding Path=element}" Header="Element" />
+                <DataGridTextColumn Binding="{Binding Path=unk9}" Header="unk9" />
+                <DataGridTextColumn Binding="{Binding Path=unk10}" Header="unk10" />
+                <DataGridTextColumn Binding="{Binding Path=unk11}" Header="unk11" />
+                <DataGridTextColumn Binding="{Binding Path=unk12}" Header="unk12" />
+                <DataGridTextColumn Binding="{Binding Path=unk13}" Header="unk13" />
+                <DataGridTextColumn Binding="{Binding Path=unk14}" Header="unk14" />
+                <DataGridTextColumn Binding="{Binding Path=unk15}" Header="unk15" />
+                <DataGridTextColumn Binding="{Binding Path=target}" Header="Target?" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Column="1" Style="{StaticResource VerticalSplitter}"/>
+
+        <!-- TEST -->
+        <Frame Grid.Column="2" Name ="TestComponent"/>
+    </Grid>
+</UserControl>

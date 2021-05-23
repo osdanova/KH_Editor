@@ -2,19 +2,19 @@
 using System.Windows.Controls;
 using KH_Editor.View.Main;
 
-namespace KH_Editor.View.KH_DDD.DDD_tboxdt
+namespace KH_Editor.View.KH_DDD.DDD_techprm
 {
     /// <summary>
-    /// Interaction logic for DDD_tboxdtComponent.xaml
+    /// Interaction logic for DDD_techprmComponent.xaml
     /// </summary>
-    public partial class DDD_tboxdtComponent : UserControl
+    public partial class DDD_techprmComponent : UserControl
     {
-        DDD_tboxdtHandler handler;
+        DDD_techprmHandler handler;
 
-        public DDD_tboxdtComponent(MainSocket mainSocketIn, bool isSoraIn)
+        public DDD_techprmComponent(MainSocket mainSocketIn, bool isPlayerIn)
         {
-            handler = new DDD_tboxdtHandler(mainSocketIn, isSoraIn);
-            DataContext = handler.file;
+            handler = new DDD_techprmHandler(mainSocketIn, isPlayerIn);
+            DataContext = handler;
             InitializeComponent();
 
             TestComponent.Content = handler.testComponent;
