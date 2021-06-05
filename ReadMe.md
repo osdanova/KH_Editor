@@ -45,6 +45,7 @@ Currently only available for PC
 | DDD  | lboard    | lboard            | Edit spirit boards (Open the Spirit menu twice to make sure it loads in a stable position for reading) |
 | DDD  | lbtlist   | lbt_list          | Edit rewards from spirit boards                                                                        |
 | DDD  | techprm   | techprm/techprmp  | Edit attack parameters                                                                                 |
+| DDD  | spcom     | spcom             | Edit spirit recipes                                                                                    |
 
 ---
 

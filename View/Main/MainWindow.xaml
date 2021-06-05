@@ -29,6 +29,7 @@
                         <MenuItem Header="Generic" Click="loadPage_DDD_techprm"/>
                         <MenuItem Header="Player" Click="loadPage_DDD_techprmp"/>
                     </MenuItem>
+                    <MenuItem Header="spcom" Click="loadPage_DDD_spcom"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="DEBUG" Visibility="Hidden">
@@ -50,7 +51,7 @@
             <StackPanel>
                 <Label Style="{StaticResource WhiteFont}"
                        Margin="0,100,0,0" HorizontalAlignment="Center" FontSize="20">
-                    Kingdom Hearts Editor (V.1.0)
+                    Kingdom Hearts Editor (V.1.1)
                 </Label>
                 <Label Style="{StaticResource WhiteFont}"
                        HorizontalAlignment="Center">

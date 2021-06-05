@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="KH_Editor.View.KH_DDD.DDD_spcom.DDD_spcomComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KH_Editor.View.KH_DDD.DDD_spcom"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Drop="dropFile" AllowDrop="True">
+
+    <Grid Style="{StaticResource KH_Grid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- COMPONENT -->
+        <DataGrid Grid.Row="0" Style="{StaticResource KH_Table}"
+                      Name="DataTable"
+                      ItemsSource="{Binding file.entriesA}"
+                      CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=spirit1Name}" Header="Spirit 1 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=spirit1Id}" Header="Spirit 1 Id" />
+                <DataGridTextColumn Binding="{Binding Path=spirit2Name}" Header="Spirit 2 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=spirit2Id}" Header="Spirit 2 Id" />
+                <DataGridTextColumn Binding="{Binding Path=chance}" Header="Spirit 2 Chance" />
+                <DataGridTextColumn Binding="{Binding Path=piece1Name}" Header="Piece 1 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=piece1Id}" Header="Piece 1 Id" />
+                <DataGridTextColumn Binding="{Binding Path=piece1Category}" Header="Piece 1 Category" />
+                <DataGridTextColumn Binding="{Binding Path=piece1Amount}" Header="Piece 1 Amount" />
+                <DataGridTextColumn Binding="{Binding Path=piece2Name}" Header="Piece 2 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=piece2Id}" Header="Piece 2 Id" />
+                <DataGridTextColumn Binding="{Binding Path=piece2Category}" Header="Piece 2 Category" />
+                <DataGridTextColumn Binding="{Binding Path=piece2Amount}" Header="Piece 2 Amount" />
+                <DataGridTextColumn Binding="{Binding Path=unk11}" Header="unk11" />
+                <DataGridTextColumn Binding="{Binding Path=rank}" Header="Rank" />
+                <DataGridTextColumn Binding="{Binding Path=unk13}" Header="unk13" />
+                <DataGridTextColumn Binding="{Binding Path=unk14}" Header="unk14" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Column="1" Style="{StaticResource VerticalSplitter}"/>
+
+        <!-- TEST -->
+        <Frame Grid.Column="2" Name ="TestComponent"/>
+    </Grid>
+</UserControl>

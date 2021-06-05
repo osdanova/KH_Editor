@@ -7,6 +7,7 @@ using KH_Editor.View.KH_DDD.DDD_inventory;
 using KH_Editor.View.KH_DDD.DDD_itemdata;
 using KH_Editor.View.KH_DDD.DDD_lboard;
 using KH_Editor.View.KH_DDD.DDD_lbtList;
+using KH_Editor.View.KH_DDD.DDD_spcom;
 using KH_Editor.View.KH_DDD.DDD_spirit;
 using KH_Editor.View.KH_DDD.DDD_Status;
 using KH_Editor.View.KH_DDD.DDD_tboxdt;
@@ -33,6 +34,7 @@ namespace KH_Editor.View.Main
                 case DDD_Components.TECHPRM: frame.Content = new DDD_techprmComponent(main, false); break;
                 case DDD_Components.TECHPRMP: frame.Content = new DDD_techprmComponent(main, true); break;
                 case DDD_Components.DROPPRM: frame.Content = new DDD_dropprmComponent(main, true); break;
+                case DDD_Components.SPCOM: frame.Content = new DDD_spcomComponent(main, true); break;
                 default: break;
             }
             

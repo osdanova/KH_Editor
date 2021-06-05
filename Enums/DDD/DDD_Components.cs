@@ -15,5 +15,6 @@
         TECHPRM,
         TECHPRMP,
         DROPPRM,
+        SPCOM,
     }
 }
