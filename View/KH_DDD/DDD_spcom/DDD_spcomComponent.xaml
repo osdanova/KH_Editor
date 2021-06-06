@@ -12,25 +12,27 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
-        <!-- COMPONENT -->
-        <DataGrid Grid.Row="0" Style="{StaticResource KH_Table}"
-                      Name="DataTable"
+        <!-- SPIRITS -->
+        <DataGrid Grid.Column="0" Style="{StaticResource KH_Table}"
+                      Name="DataTableA"
                       ItemsSource="{Binding file.entriesA}"
                       CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=spirit1Name}" Header="Spirit 1 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=spirit1Name}" Header="Spirit 1" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=spirit1Id}" Header="Spirit 1 Id" />
-                <DataGridTextColumn Binding="{Binding Path=spirit2Name}" Header="Spirit 2 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=spirit2Name}" Header="Spirit 2" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=spirit2Id}" Header="Spirit 2 Id" />
                 <DataGridTextColumn Binding="{Binding Path=chance}" Header="Spirit 2 Chance" />
-                <DataGridTextColumn Binding="{Binding Path=piece1Name}" Header="Piece 1 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=piece1Name}" Header="Piece 1" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=piece1Id}" Header="Piece 1 Id" />
                 <DataGridTextColumn Binding="{Binding Path=piece1Category}" Header="Piece 1 Category" />
                 <DataGridTextColumn Binding="{Binding Path=piece1Amount}" Header="Piece 1 Amount" />
-                <DataGridTextColumn Binding="{Binding Path=piece2Name}" Header="Piece 2 Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=piece2Name}" Header="Piece 2" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=piece2Id}" Header="Piece 2 Id" />
                 <DataGridTextColumn Binding="{Binding Path=piece2Category}" Header="Piece 2 Category" />
                 <DataGridTextColumn Binding="{Binding Path=piece2Amount}" Header="Piece 2 Amount" />
@@ -43,7 +45,98 @@
 
         <GridSplitter Grid.Column="1" Style="{StaticResource VerticalSplitter}"/>
 
+        <!-- ITEMS -->
+        <DataGrid Grid.Column="2" Style="{StaticResource KH_Table}"
+                      Name="DataTableB"
+                      ItemsSource="{Binding file.entriesB}"
+                      CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=itemName}" Header="Item" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=itemId}" Header="Item Id" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=itemCategory}" Header="Item Category" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=hp}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_HP.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=attack}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Attack.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=defense}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Defense.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=magic}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Magic.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_fire}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Fire.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_blizzard}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Blizzard.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_thunder}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Thunder.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_water}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Water.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_dark}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Dark.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ele_light}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Light.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=affinity}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Image Source="/Assets/Icons/Icon_Affinity.png"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Column="3" Style="{StaticResource VerticalSplitter}"/>
+
         <!-- TEST -->
-        <Frame Grid.Column="2" Name ="TestComponent"/>
+        <Frame Grid.Column="4" Name ="TestComponent"/>
     </Grid>
 </UserControl>
